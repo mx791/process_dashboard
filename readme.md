@@ -22,3 +22,4 @@ d.Run()
 - Allow to choose dashboard's port
 - Allow to choose page title
 - Provide information about task state (running, done)
+- Multiline chart
