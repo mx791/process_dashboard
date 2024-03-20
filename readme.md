@@ -23,3 +23,5 @@ d.Run()
 - Allow to choose page title
 - Provide information about task state (running, done)
 - Multiline chart
+- Scatter plot
+- Task percent complete
