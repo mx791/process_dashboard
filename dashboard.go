@@ -43,14 +43,15 @@ func (d DashBoard) Run() {
 
 	go func() {
 		for i := 0; i < d.Iters; i++ {
-			data = append(data, d.Task())
+			taskResult := d.Task()
+			taskResult["currentIteration"] = fmt.Sprintf("%d", i)
+			data = append(data, taskResult)
 		}
 	}()
 
 	http.HandleFunc("/data", apiHandler)
 	http.HandleFunc("/", mainPageHandler)
 	http.ListenAndServe(":8080", nil)
-
 }
 
 type LineCallback struct {

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 
 	"github.com/mx791/process_dashboard"
 )
@@ -37,6 +38,7 @@ func main() {
 			IV = c_IV
 			best_loss = loss
 		}
+		time.Sleep(2 * time.Second)
 		out := make(map[string]string)
 		out["last_best_loss"] = fmt.Sprintf("%f", best_loss)
 		out["last_loss"] = fmt.Sprintf("%f", loss)
@@ -47,6 +49,7 @@ func main() {
 	d := process_dashboard.DashBoard{task, 100, []process_dashboard.Callback{
 		process_dashboard.LastValueCallback{"Implied volatility", "current_iv"},
 		process_dashboard.LastValueCallback{"Loss", "last_best_loss"},
+		process_dashboard.LastValueCallback{"Current iteration", "currentIteration"},
 		process_dashboard.LineCallback{"Best loss", "last_best_loss"},
 		process_dashboard.LineCallback{"Tested loss", "last_loss"},
 		process_dashboard.LineCallback{"Implied volatility", "current_iv"},
