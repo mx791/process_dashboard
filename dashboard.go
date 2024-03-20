@@ -1,4 +1,4 @@
-package main
+package process_dashboard
 
 import (
 	"encoding/json"
