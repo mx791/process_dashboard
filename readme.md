@@ -2,6 +2,7 @@
 
 Create a visual dashboard for your long Golang processes.
 
+![](./figures/dashboard.PNG)
 
 ## How to use
 ```
