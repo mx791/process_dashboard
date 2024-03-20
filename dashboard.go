@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 	"strings"
 )
 
@@ -24,8 +23,7 @@ func (d DashBoard) Run() {
 	data := make([]map[string]string, 0)
 
 	mainPageHandler := func(w http.ResponseWriter, r *http.Request) {
-		dat, _ := os.ReadFile("./index.html")
-		content := string(dat)
+		content := GetIndexContent()
 		replaceCode := ""
 		replaceCanvas := ""
 		for id, code := range d.Callbacks {
