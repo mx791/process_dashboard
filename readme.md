@@ -17,11 +17,13 @@ d.Run()
 ## Metrics
 - LastValueCallback : Display the last raw value of a metric, as text
 - LineCallback : Display the evolution of a metric in a line chart
+- LineCallback : Display the evolution of a few metrics in a line chart
 
 ## Further improvement
 - Allow to choose dashboard's port
 - Allow to choose page title
 - Provide information about task state (running, done)
-- Multiline chart
+- Multiline chart ✅
 - Scatter plot
 - Task percent complete
+- Display raw text in dashboard
